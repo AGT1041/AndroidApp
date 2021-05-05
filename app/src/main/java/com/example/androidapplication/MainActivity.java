@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
     private EditText userText;
     private EditText passWord;
     private EditText fullName;
-    private EditText emailText;
+    private EditText emailText,urdescription,workText;
     Button signUp;
     private Button mDatebtn,dButton;
     private TextView mDateText;
@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
         fullName=findViewById(R.id.editTextName);
         passWord=findViewById(R.id.password);
         signUp=findViewById(R.id.regester);
-        // dButton=findViewById(R.id.regester);
+        urdescription=findViewById(R.id.mainDescription);
+        workText=findViewById(R.id.occupationInput);
         mDatebtn=findViewById(R.id.datePickerButton);
         mDateText=findViewById(R.id.datetText);
 
@@ -50,11 +51,17 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
 
                 if(SetValidation()==true && mDateText.length()!=0){
                     String username = userText.getText().toString();
+                    String fullname=fullName.getText().toString();
+                    String urjob=workText.getText().toString();
+                    String urinfo= urdescription.getText().toString();
+
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                     intent.putExtra("usernames", username);
                     intent.putExtra("age", ageText);
-                    intent.putExtra("fullname",fullName.getText().toString());
-                    intent.putExtra("fullname",fullName.getText().toString());
+                    intent.putExtra("fullname",fullname);
+                    intent.putExtra("work",urjob);
+                    intent.putExtra("description",urinfo);
+                    //intent.putExtra("fullname",fullName.getText().toString());
                     //intent.putExtra("age",)
                     startActivity(intent);
                 }
@@ -98,6 +105,12 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
 
         if (mDateText.length()==0){
             mDateText.setError("need birth date");
+        }
+        if(workText.length()==0){
+            workText.setError("Cant leave this empty");
+        }
+        if (urdescription .length()==0){
+            urdescription.setError("cant leave this empty");
         }
 
         // return true.

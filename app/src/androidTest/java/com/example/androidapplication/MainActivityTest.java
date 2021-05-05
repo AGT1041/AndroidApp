@@ -12,6 +12,7 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.allOf;
+
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
     @Rule
@@ -31,6 +32,7 @@ public class MainActivityTest {
     }
     @Test
     public void fullnamecheck(){
+        onView(withId(R.id.editUser)).perform(typeText("test206"));
         onView(withId(R.id.editTextName)).perform(typeText("john"));
         onView(withId(R.id.regester)).perform((click()));
         onView(allOf(withId(R.id.editTextName), hasErrorText("Must have 8 characters")));
@@ -38,6 +40,8 @@ public class MainActivityTest {
     }
     @Test
     public void emailcheck(){
+        onView(withId(R.id.editUser)).perform(typeText("test206"));
+        onView(withId(R.id.editTextName)).perform(typeText(" messi ronaldo"));
         onView(withId(R.id.editTextEmail)).perform(typeText("john.gmail"));
         onView(withId(R.id.regester)).perform( (click()));
         onView(allOf(withId(R.id.editTextEmail), hasErrorText("Email is inValid")));
@@ -53,10 +57,15 @@ public class MainActivityTest {
         onView(withId(R.id.regester)).perform( (click()));
         onView(allOf(withId(R.id.datetText), hasErrorText("need birth date")));
     }
-
+    @Test
     public void passwordcheck(){
+        onView(withId(R.id.editUser)).perform(typeText("abetest"));
+        onView(withId(R.id.editTextName)).perform(typeText("abenezer taddesse"));
+        onView(withId(R.id.editTextEmail)).perform(typeText("abe@gmail.com"));
+
         onView(withId(R.id.password)).perform(typeText("pass"));
-        onView(withId(R.id.regester)).perform((click()));
+
+        onView(withId(R.id.regester)).perform( (click()));
         onView(allOf(withId(R.id.password), hasErrorText("Password must have 8 or more characters")));
     }
 
@@ -68,9 +77,18 @@ public class MainActivityTest {
 
         onView(withId(R.id.password)).perform(typeText("password12"));
         onView(withId(R.id.regester)).perform((click()));
+
+
     }
 
+    @Test
+    public void testbirthdate(){
+        onView(withId(R.id.datePickerButton)).perform((click()));
+        //onView(isAssignableFrom(DatePicker.class)).perform(setDate(1980, 10, 30));
+        onView(withId(R.id.regester)).perform((click()));
+        onView(allOf(withId(R.id.editTextName), hasErrorText("Must have 8 characters")));
 
+    }
 
 
 }

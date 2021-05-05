@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username"
-        android:textSize="32sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profilePhoto" />
@@ -34,7 +34,7 @@
         android:layout_marginTop="24dp"
         android:text="name"
         android:textColor="#000"
-        android:textSize="32sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
         android:text="description"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="22sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lineOne" />
@@ -94,7 +94,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/age" />
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/setoccupation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
