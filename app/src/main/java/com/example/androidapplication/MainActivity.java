@@ -2,7 +2,6 @@ package com.example.androidapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
             public void onClick(View v) {
                 //isAllFieldsChecked=SetValidation();
 
-                if(SetValidation()==true && mDateText.length()!=0){
+               // if(SetValidation()==true && mDateText.length()!=0){
                     String username = userText.getText().toString();
                     String fullname=fullName.getText().toString();
                     String urjob=workText.getText().toString();
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
                     //intent.putExtra("fullname",fullName.getText().toString());
                     //intent.putExtra("age",)
                     startActivity(intent);
-                }
+                //}
             }
         });
         mDatebtn.setOnClickListener(new View.OnClickListener() {
@@ -80,38 +79,38 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
 
 
     public boolean SetValidation() {
-        if (userText.length() <6) {
-            userText.setError("Must have 6 characters");
-            return false;
-        }
+      //  if (userText.length() <6) {
+      //      userText.setError("Must have 6 characters");
+     //       return false;
+      //  }
 
-        if(fullName.length()<8){
-            fullName.setError("Must have 8 characters");
-            return false;
+     //   if(fullName.length()<8){
+     //       fullName.setError("Must have 8 characters");
+     //       return false;
 
-        }
-        String emailinput = emailText.getText().toString();
+      //  }
+    //    String emailinput = emailText.getText().toString();
 //String user=userText.getText().toString();
-        if (emailinput.length()==0 || !Patterns.EMAIL_ADDRESS.matcher(emailinput).matches()) {
+    //    if (emailinput.length()==0 || !Patterns.EMAIL_ADDRESS.matcher(emailinput).matches()) {
             //Toast.makeText(this, "Email is Valiade", Toast.LENGTH_SHORT).show();
-            emailText.setError("Email is inValid");
-            return false;
-        }
+      //      emailText.setError("Email is inValid");
+      //      return false;
+    //    }
 
         if (passWord.length() <7) {
-            passWord.setError("Password must have 8 or more characters");
-            return false;
-        }
+          passWord.setError("Password must have 8 or more characters");
+           return false;
+       }
 
-        if (mDateText.length()==0){
-            mDateText.setError("need birth date");
-        }
-        if(workText.length()==0){
-            workText.setError("Cant leave this empty");
-        }
-        if (urdescription .length()==0){
-            urdescription.setError("cant leave this empty");
-        }
+     //   if (mDateText.length()==0){
+     //       mDateText.setError("need birth date");
+    //    }
+     //   if(workText.length()==0){
+     //       workText.setError("Cant leave this empty");
+    //    }
+     //   if (urdescription .length()==0){
+     //       urdescription.setError("cant leave this empty");
+    //    }
 
         // return true.
         return true;
@@ -144,14 +143,14 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
         int age = Period.between(todaydate, userday).getYears();
 
         ageText=(calculateAge(c.getTimeInMillis()));
-        if (ageText<18|| mDateText.getText().toString().length()==0){
-            mDateText.setError("you need to be 18");
+       // if (ageText<18|| mDateText.getText().toString().length()==0){
+         //   mDateText.setError("you need to be 18");
 
-        }
-        else{
-            mDateText.setError(null);
+        //}
+       // else{
+       //     mDateText.setError(null);
 
-        }
+       // }
 
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 
