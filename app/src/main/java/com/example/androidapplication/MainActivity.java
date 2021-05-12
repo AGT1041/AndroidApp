@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
             public void onClick(View v) {
                 //isAllFieldsChecked=SetValidation();
 
-               // if(SetValidation()==true && mDateText.length()!=0){
+                if(SetValidation()==true && mDateText.length()!=0){
                     String username = userText.getText().toString();
                     String fullname=fullName.getText().toString();
                     String urjob=workText.getText().toString();
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
                     //intent.putExtra("fullname",fullName.getText().toString());
                     //intent.putExtra("age",)
                     startActivity(intent);
-                //}
+                }
             }
         });
         mDatebtn.setOnClickListener(new View.OnClickListener() {
@@ -79,10 +79,10 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
 
 
     public boolean SetValidation() {
-      //  if (userText.length() <6) {
-      //      userText.setError("Must have 6 characters");
-     //       return false;
-      //  }
+        if (userText.length() <6) {
+            userText.setError("Must have 6 characters");
+           return false;
+        }
 
      //   if(fullName.length()<8){
      //       fullName.setError("Must have 8 characters");
@@ -97,10 +97,10 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
       //      return false;
     //    }
 
-        if (passWord.length() <7) {
-          passWord.setError("Password must have 8 or more characters");
-           return false;
-       }
+       // if (passWord.length() <7) {
+      //    passWord.setError("Password must have 8 or more characters");
+      //     return false;
+      // }
 
      //   if (mDateText.length()==0){
      //       mDateText.setError("need birth date");

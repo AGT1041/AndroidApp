@@ -12,7 +12,6 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.allOf;
-
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
     @Rule
