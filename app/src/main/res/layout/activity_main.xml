@@ -8,8 +8,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="20dp"
-    android:paddingTop="50dp"
+    android:paddingBottom="@dimen/twenty"
+    android:paddingTop="@dimen/fifty"
     tools:context=".MainActivity">
 
     <EditText
@@ -45,7 +45,7 @@
         android:orientation="horizontal" >
         <Button
             android:id="@+id/datePickerButton"
-            android:textSize="12dp"
+            android:textSize="@dimen/twelve"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/datePick" />
@@ -67,12 +67,12 @@
         android:hint="Occupation"
         android:ems="10"
         android:inputType="text"
-        android:textSize="20sp"
+        android:textSize="@dimen/twintysp"
         />
     <EditText
         android:id="@+id/mainDescription"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/seventy"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Description"
@@ -94,7 +94,7 @@
         android:id="@+id/regester"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="100dp"
+        android:layout_margin="@dimen/one2zero"
         android:text="@string/Registor" />
 
 

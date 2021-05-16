@@ -14,5 +14,12 @@
     <dimen name="ninety">90dp</dimen>
     <dimen name="one2zero">100dp</dimen>
     <dimen name="fifty">50dp</dimen>
-
+    <dimen name="zero">0dp</dimen>
+    <dimen name="twintysp">20sp</dimen>
+    <dimen name="twelve">12dp</dimen>
+    <dimen name="twohundred">200dp</dimen>
+    <dimen name="one">1dp</dimen>
+    <dimen name="two">2dp</dimen>
+    <dimen name="point6">0.5</dimen>
+    <dimen name="point8">0.80</dimen>
 </resources>

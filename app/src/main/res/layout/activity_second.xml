@@ -14,10 +14,10 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/seventy"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="@dimen/zero"
         app:itemIconTint="@color/red"
         app:itemTextColor="@color/white"
         android:textAlignment="gravity"
