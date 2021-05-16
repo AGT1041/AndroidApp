@@ -13,7 +13,7 @@ public class ProfileFragment extends Fragment {
 
     private SecondActivity.Data datas;
     private FragmentManager manger;
-    private TextView users, userage, userjob, userdesc,age;
+    private TextView users, userage, userjob, userdesc,fullname;
 
 
 
@@ -30,15 +30,17 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        users=view.findViewById(R.id.loginText);
+        users=view.findViewById(R.id.usernamText);
         userage=view.findViewById(R.id.age);
         userdesc=view.findViewById(R.id.description);
-        userjob=view.findViewById(R.id.setoccupation);
+        userjob=view.findViewById(R.id.fullName);
+        fullname=view.findViewById(R.id.setoccupation);
 
         users.setText(this.datas.user);
-        userjob.setText(this.datas.work);
-        userdesc.setText(this.datas.descrption);
-        userage.setInputType(this.datas.ages);
+       userjob.setText(this.datas.work);
+       userdesc.setText(this.datas.descrption);
+        userage.setText(this.datas.realage);
+        fullname.setText(this.datas.fullname);
         return view;
     }
     public void setData(SecondActivity.Data data){

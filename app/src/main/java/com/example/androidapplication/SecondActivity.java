@@ -21,7 +21,7 @@ public class SecondActivity extends AppCompatActivity {
     private TextView userName,age,fullNmae,occupation,descriptiontext;
     private Button back;
     private BottomNavigationView  bottomview;
-    private String user,work,description,fullname;
+    private String user,work,description,fullname,realage;
     private int ages;
     private FragmentManager manager;
     @Override
@@ -42,16 +42,18 @@ public class SecondActivity extends AppCompatActivity {
 
             if (bundle.containsKey("age")) {
                 ages = bundle.getInt("age",0);
+                //String b= Integer.toString(a);
+                realage=Integer.toString(ages);
             }
             if (bundle.containsKey("work")) {
                 work= bundle.getString("work");
             }
-            if (bundle.containsKey("usernames")) {
-                description = bundle.getString("usernames");
+            if (bundle.containsKey("description")) {
+                description = bundle.getString("description");
             }
 
-            if (bundle.containsKey("description")) {
-                fullname = bundle.getString("description");
+            if (bundle.containsKey("fullname")) {
+                fullname = bundle.getString("fullname");
             }
         }
         //userName=findViewById(R.id.loginText);
@@ -79,7 +81,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
         ProfileFragment fragment = new ProfileFragment();
-        fragment.setData(new Data(user,work,description,fullname,ages));
+        fragment.setData(new Data(user,fullname,description,work,realage));
 
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
@@ -95,13 +97,16 @@ public class SecondActivity extends AppCompatActivity {
                     switch (item.getItemId()){
                         case R.id.nav_profile:
                             ProfileFragment fragment = new ProfileFragment();
-                            fragment.setData(new Data(user,work,description,fullname,ages));
+                            fragment.setData(new Data(user,fullname,description,work,realage));
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
                             break;
                         case R.id.nav_setting:
                             SettingFragment seting = new SettingFragment();
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingFragment()).commit();
-
+                            break;
+                        case R.id.nav_matches:
+                            MatchesFragment matches = new MatchesFragment();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MatchesFragment()).commit();
                     }
 
                     return true;
@@ -111,14 +116,13 @@ public class SecondActivity extends AppCompatActivity {
 
     public static class  Data {
         String user,fullname,descrption,work;
-        int ages;
-        Data(String user,String fullname, String descrption, String work, int ages){
+        String realage;
+        Data(String user,String fullname, String descrption, String work, String realage){
             this.user=user;
             this.fullname=fullname;
             this.work=work;
             this.descrption=descrption;
-            this.fullname=fullname;
-            this.ages=ages;
+            this.realage=realage;
 
         }
 

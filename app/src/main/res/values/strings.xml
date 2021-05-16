@@ -10,6 +10,8 @@
     <string name="datePick">Pick a Date </string>
     <string name="me">Taddesse, Abenezer 4/12/2021 </string>
     <string name="profile">Your Profile </string>
+    <string name="matchtitle">Your Matches </string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
