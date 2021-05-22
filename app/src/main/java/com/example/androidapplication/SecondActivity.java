@@ -32,6 +32,7 @@ public class SecondActivity extends AppCompatActivity {
         bottomview= findViewById(R.id.bottom_navigation);
 
         bottomview.setOnNavigationItemSelectedListener(navListener);
+
         manager = getSupportFragmentManager();
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -112,8 +113,22 @@ public class SecondActivity extends AppCompatActivity {
                     return true;
                 }
 
+
             };
 
+    @Override
+    public void onBackPressed() {
+        BottomNavigationView mBottomNavigationView = findViewById(R.id.bottom_navigation);
+        if (mBottomNavigationView.getSelectedItemId() == R.id.nav_profile)
+        {
+            super.onBackPressed();
+            finish();
+        }
+        else
+        {
+            mBottomNavigationView.setSelectedItemId(R.id.nav_profile);
+        }
+    }
     public static class  Data {
         String user,fullname,descrption,work;
         String realage;
@@ -127,4 +142,5 @@ public class SecondActivity extends AppCompatActivity {
         }
 
     }
+
 }
