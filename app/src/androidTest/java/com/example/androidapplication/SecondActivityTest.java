@@ -9,6 +9,7 @@ import org.junit.Test;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
@@ -39,11 +40,12 @@ public class SecondActivityTest {
     public void checkNavMatch() {
 
         onView(withId(R.id.nav_matches)).perform( click());
+        //onView((withId(R.id.m_app_bar))).check((matches(withText("me"))));
         try {
-            onView(withId(R.id.matchTitile)).check(matches(withText("Your Matches")));
+            onView(withId(R.id.m_app_bar)).check(matches(hasDescendant(withText("Your Matches"))));
         } catch (NoMatchingViewException e) {
-            onView(withId(R.id.nav_setting)).perform( click());
-            onView(withId(R.id.settingText)).check(matches(withText("Your Matches")));
+            onView(withId(R.id.nav_matches)).perform( click());
+            onView(withId(R.id.m_app_bar)).check(matches(hasDescendant(withText("Your Matches"))));
         }
     }
 
