@@ -27,7 +27,7 @@ public class MatchesDataModel {
     }
 
     public void getMatche(Consumer<QuerySnapshot> dataChangedCallback, Consumer<FirebaseFirestoreException> dataErrorCallback){
-        ListenerRegistration listener = databaseb.collection("Matches")
+        ListenerRegistration listener = databaseb.collection("matches")
                 .addSnapshotListener((queryDocumentSnapshots, e) -> {
                     if(e !=null){
                         dataErrorCallback.accept(e);
