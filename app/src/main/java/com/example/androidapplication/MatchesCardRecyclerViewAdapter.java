@@ -31,7 +31,6 @@ public class MatchesCardRecyclerViewAdapter extends RecyclerView.Adapter<MatchCa
     @Override
     public void onBindViewHolder(@NonNull MatchCardViewHolder holder, int position) {
         MatcheDatas matcheData = matchesList.get(position);
-        holder.matcheImg.setImageResource(matcheData.getMatcheImg());
         holder.matcheName.setText(matcheData.getMatcheName());
     }
 
