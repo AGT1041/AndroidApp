@@ -8,15 +8,19 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.androidapplication.model.MatchesModel;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class MatchesCardRecyclerViewAdapter extends RecyclerView.Adapter<MatchCardViewHolder>{
-    private List<MatcheDatas> matchesList;
+    //private List<MatcheDatas> matchesList;
+    private List<MatchesModel> matchedatasList;
     Context context;
 
-    MatchesCardRecyclerViewAdapter(Context context,List<MatcheDatas> matchesList) {
-        this.matchesList = matchesList;
-        this.context=context;
+    MatchesCardRecyclerViewAdapter(List<MatchesModel> matchedatasList) {
+        this.matchedatasList = matchedatasList;
+        //this.context=context;
     }
 
 
@@ -30,12 +34,23 @@ public class MatchesCardRecyclerViewAdapter extends RecyclerView.Adapter<MatchCa
 
     @Override
     public void onBindViewHolder(@NonNull MatchCardViewHolder holder, int position) {
-        MatcheDatas matcheData = matchesList.get(position);
-        holder.matcheName.setText(matcheData.getMatcheName());
+        if (matchedatasList != null) {
+            MatchesModel match = this.matchedatasList.get(position);
+            holder.matcheName.setText(match.name);
+            Picasso.get().load(match.imageUrl).into(holder.matcheImg);
+            //holder.matcheImg.set
+            //imageRequester.setImageFromUrl(holder.matchImage, m.imageUrl);
+           // Picasso.with(context).load(ImageURL).into(imageView);
+            //holder.matcheName.setText(matcheData.getMatcheName());
+        }
+        //holder.matcheName.setText(matcheData.getMatcheName());
     }
 
     @Override
     public int getItemCount() {
-        return matchesList.size();
+        return matchedatasList.size();
+    }
+    public void setMatches(List<MatchesModel> match) {
+        this.matchedatasList = match;
     }
 }

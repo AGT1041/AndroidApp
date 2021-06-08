@@ -17,13 +17,14 @@ import java.util.function.Consumer;
 public class MatchesDataModel {
     private FirebaseFirestore databaseb;
     private List<ListenerRegistration> listeners;
+
     public  MatchesDataModel(){
         databaseb = FirebaseFirestore.getInstance();
         listeners = new ArrayList<>();
     }
     public void addMatchs(MatchesModel matchs) {
-        CollectionReference todoItemsRef = databaseb.collection("matches");
-        todoItemsRef.add(matchs);
+        CollectionReference matchesRef = databaseb.collection("matches");
+        matchesRef.add(matchs);
     }
 
     public void getMatche(Consumer<QuerySnapshot> dataChangedCallback, Consumer<FirebaseFirestoreException> dataErrorCallback){
@@ -38,13 +39,15 @@ public class MatchesDataModel {
         listeners.add(listener);
     }
     public void updateMatches(MatchesModel matches) {
-        DocumentReference matchref = databaseb.collection("matches").document(matches.uid);
+        DocumentReference matchref = databaseb.collection("matches").document(matches.getUid());
 
         Map<String, Object> info = new HashMap<>();
         info.put("name", matches.name);
         info.put("imageUrl", matches.imageUrl);
         info.put("liked", matches.liked);
         matchref.update(info);
+        String name=matches.name;
+        System.out.println(name);
     }
     public void clear() {
         listeners.forEach(ListenerRegistration::remove);

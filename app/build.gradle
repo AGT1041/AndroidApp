@@ -67,6 +67,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.0'
     implementation 'com.google.firebase:firebase-storage:20.0.0'
     implementation 'com.google.firebase:firebase-firestore:23.0.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     dependencies {
 
         // Declare the dependency for the Firebase Authentication library
