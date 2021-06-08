@@ -25,4 +25,5 @@ public class MatchCardViewHolder extends RecyclerView.ViewHolder{
             t.show();
         });
     }
+
 }

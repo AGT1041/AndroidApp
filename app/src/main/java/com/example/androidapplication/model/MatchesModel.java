@@ -23,6 +23,13 @@ public class MatchesModel implements Parcelable {
         liked = in.readByte() !=0;
         imageUrl = in.readString();
     }
+    public String getName() {
+        return name;
+    }
+
+    public String getUid() {
+        return uid;
+    }
 
     public static final Creator<MatchesModel> CREATOR = new Creator<MatchesModel>() {
         @Override

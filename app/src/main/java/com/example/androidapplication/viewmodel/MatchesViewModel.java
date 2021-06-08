@@ -27,15 +27,18 @@ public class MatchesViewModel {
                             MatchesModel matchesModel = matchesSnap.toObject(MatchesModel.class);
                             assert  matchesModel !=null;
                             matchesModel.uid =matchesSnap.getId();
+
                             matchViews.add(matchesModel);
                         }
                         responseCallback.accept(matchViews);
                     }
                 },
-                (databaseError -> System.out.println("Error something went wrong" + databaseError))
+                (databaseError -> System.out.println("Error ErrorErrorErrorvvvErrorErrorErrorErrorErrorErrorErrorError something went wrong" + databaseError))
         );
     }
-
+    public void updateMatch(MatchesModel m){
+        matchesDataM.updateMatches(m);
+    }
     public void clear(){
         matchesDataM.clear();
     }
