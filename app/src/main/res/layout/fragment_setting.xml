@@ -1,15 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:gravity="center"
-    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/settingText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Settings"
-        android:textSize="30sp"
-        />
-</LinearLayout>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_launcher_foreground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".SettingsFragment">
+
+        <TextView
+            android:id="@+id/textViewSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/fifteen"
+
+            android:text="@string/settings"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/textViewReminderTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:text="@string/reminder_title"
+            android:textSize="17dp"/>
+
+
+        <Spinner
+            android:id="@+id/time_seter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:entries="@array/time_arrays"
+            android:prompt="@string/setingtime"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/textViewMaxDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteen"
+            android:layout_marginTop="@dimen/fifteen"
+            android:textColor="@color/black"
+            android:text="@string/max_distance"
+            android:textSize="17dp"/>
+
+        <Spinner
+            android:id="@+id/editTextMaxDistance"
+            android:layout_width="@dimen/twohundred"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteen"
+            android:hint="@string/max_dest_hint"
+            android:autofillHints=""
+            android:entries="@array/m_dist_array"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/textViewGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteen"
+            android:layout_marginTop="@dimen/fifteen"
+            android:textColor="@color/black"
+            android:text="@string/gender_v"
+            android:textSize="@dimen/twenty"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fifty"
+            android:spinnerMode="dropdown"
+            android:id="@+id/gender"
+            android:layout_marginStart="@dimen/fifteen"
+            android:entries="@array/gender_arrays"
+            android:prompt="@string/gender_v"
+            android:textAlignment="center"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteen"
+            android:text="@string/private_set"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/acct_checkbox"
+            />
+
+
+
+        <TextView
+            android:id="@+id/textViewMinAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteen"
+            android:layout_marginTop="@dimen/fifteen"
+            android:textColor="@color/black"
+            android:text="@string/min_age_v"
+            android:textSize="@dimen/fifteen"/>
+
+        <Spinner
+            android:id="@+id/editTextMinAge"
+            android:layout_width="@dimen/twohundred"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteen"
+            android:hint="@string/min_age_hint"
+            android:autofillHints=""
+            android:entries="@array/agesArrays"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/textViewMaxAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteen"
+            android:layout_marginTop="@dimen/fifteen"
+            android:textColor="@color/black"
+            android:text="@string/max_age_v"
+            android:textSize="@dimen/twenty"/>
+
+        <Spinner
+            android:id="@+id/editTextMaxAge"
+            android:layout_width="@dimen/twohundred"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteen"
+            android:hint="@string/max_age_hint"
+            android:autofillHints=""
+            android:entries="@array/agesArrays"
+            android:inputType="number"/>
+
+        <Button
+            android:id="@+id/SaveSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteen"
+            android:layout_marginTop="@dimen/twofive"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/save" />
+
+
+    </LinearLayout>
+</ScrollView>
