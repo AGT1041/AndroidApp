@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
             public void onClick(View v) {
                 //isAllFieldsChecked=SetValidation();
 
-                //if(SetValidation()==true && mDateText.length()!=0){
+                if(SetValidation()==true && mDateText.length()!=0){
                     String username = userText.getText().toString();
                     String fullname=fullName.getText().toString();
                     String urjob=workText.getText().toString();
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements OnDateSetListener
                     //intent.putExtra("fullname",fullName.getText().toString());
                     //intent.putExtra("age",)
                     startActivity(intent);
-               // }
+                }
             }
         });
         mDatebtn.setOnClickListener(new View.OnClickListener() {
